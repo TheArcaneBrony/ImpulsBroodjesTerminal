@@ -1,10 +1,11 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using GipTerminalInstaller;
 
-namespace GipTerminalInstaller.Installers
+namespace GipTerminalInstallerRunner
 {
-    public class dotnet
+    public class DotNet
     {
         public static bool CheckIfInstalled()
         {
