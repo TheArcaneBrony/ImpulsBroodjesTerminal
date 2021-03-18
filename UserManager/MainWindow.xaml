@@ -1,0 +1,20 @@
+﻿<Window x:Class="UserManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UserManager"
+        mc:Ignorable="d"
+        Title="Impuls Broodjes User Manager" Height="450" Width="800" Loaded="MainWindow_OnLoaded">
+    <Grid>
+        <ListBox x:Name="UserList" Margin="10,69,0,10" HorizontalAlignment="Left" Width="200" SelectionMode="Single" SelectionChanged="UserList_SelectionChanged"/>
+        <ScrollViewer x:Name="UserInfo" Margin="215,40,10,10" d:LayoutOverrides="Width"/>
+        <Button x:Name="SaveButton" Content="✔️Alle wijzigingen opslaan" HorizontalAlignment="Right" Height="21" Margin="0,0,40,10" VerticalAlignment="Bottom" Width="160" Click="SaveButton_Click"/>
+        <TextBox x:Name="FilterBox" HorizontalAlignment="Left" Height="25" Margin="51,10,0,0" Text=""  TextWrapping="Wrap" VerticalAlignment="Top" Width="159" TextChanged="FilterBox_TextChanged"/>
+        <Label Content="Filter" HorizontalAlignment="Left" Height="25" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="ReloadButton" ToolTip="Herladen" Content="🔄️" Height="24" Margin="10,40,0,0" Width="24" VerticalAlignment="Top" HorizontalAlignment="Left" Click="ReloadButton_Click"/>
+        <Button x:Name="AddButton" ToolTip="Gebruiker toevoegen" Content="➕" Height="24" Margin="40,40,0,0" Width="24" VerticalAlignment="Top" HorizontalAlignment="Left" Click="AddButton_Click"/>
+        <Button x:Name="RemoveButton" ToolTip="Gebruiker verwijderen" Content="➖" Height="24" Margin="70,40,0,0" Width="24" VerticalAlignment="Top" HorizontalAlignment="Left" Click="RemoveButton_Click"/>
+        <Button x:Name="AddUserCsvButton" ToolTip="Gebruikers toevoegen via CSV" Content="📃" Height="24" Margin="99,40,0,0" Width="24" VerticalAlignment="Top" HorizontalAlignment="Left" Click="AddUserCsvButton_Click"/>
+    </Grid>
+</Window>

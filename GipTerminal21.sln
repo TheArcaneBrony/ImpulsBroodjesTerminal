@@ -1,8 +1,32 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GipTerminal21", "GipTerminal21\GipTerminal21.csproj", "{4DB06DC9-3027-48B3-A117-E9E6303F5B09}"
+# Blend for Visual Studio Version 16
+VisualStudioVersion = 16.0.31025.218
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GipTerminal21", "GipTerminal21\GipTerminal21.csproj", "{4DB06DC9-3027-48B3-A117-E9E6303F5B09}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThumbnailGenerator", "ThumbnailGenerator\ThumbnailGenerator.csproj", "{FC786FFA-1A42-465D-BA46-750DE60239B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GipTerminalInstaller", "GipTerminalInstaller\GipTerminalInstaller.csproj", "{C2DEA144-BA2C-48B1-B7EF-CEEACD4F7AC3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserGenerator", "UserGenerator\UserGenerator.csproj", "{8E3740C9-CEEF-452B-A538-30D7D129E397}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserManager", "UserManager\UserManager.csproj", "{5D4B6489-F92A-48C1-83B6-3BFA69DDEFBB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GipTerminalInstallerRunner", "GipTerminalInstallerRunner\GipTerminalInstallerRunner.csproj", "{D5F40EFB-CDB4-4010-83E0-8EDD1A70DD06}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "aShared", "aShared\aShared.shproj", "{3D560009-F446-47B9-8039-F4D2BE49FE8E}"
 EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		aShared\aShared.projitems*{3d560009-f446-47b9-8039-f4d2be49fe8e}*SharedItemsImports = 13
+		aShared\aShared.projitems*{4db06dc9-3027-48b3-a117-e9e6303f5b09}*SharedItemsImports = 5
+		aShared\aShared.projitems*{5d4b6489-f92a-48c1-83b6-3bfa69ddefbb}*SharedItemsImports = 5
+		aShared\aShared.projitems*{8e3740c9-ceef-452b-a538-30d7d129e397}*SharedItemsImports = 5
+		aShared\aShared.projitems*{c2dea144-ba2c-48b1-b7ef-ceeacd4f7ac3}*SharedItemsImports = 4
+		aShared\aShared.projitems*{d5f40efb-cdb4-4010-83e0-8edd1a70dd06}*SharedItemsImports = 4
+		aShared\aShared.projitems*{fc786ffa-1a42-465d-ba46-750de60239b0}*SharedItemsImports = 5
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -12,5 +36,31 @@ Global
 		{4DB06DC9-3027-48B3-A117-E9E6303F5B09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DB06DC9-3027-48B3-A117-E9E6303F5B09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DB06DC9-3027-48B3-A117-E9E6303F5B09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC786FFA-1A42-465D-BA46-750DE60239B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC786FFA-1A42-465D-BA46-750DE60239B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC786FFA-1A42-465D-BA46-750DE60239B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC786FFA-1A42-465D-BA46-750DE60239B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2DEA144-BA2C-48B1-B7EF-CEEACD4F7AC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2DEA144-BA2C-48B1-B7EF-CEEACD4F7AC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2DEA144-BA2C-48B1-B7EF-CEEACD4F7AC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2DEA144-BA2C-48B1-B7EF-CEEACD4F7AC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E3740C9-CEEF-452B-A538-30D7D129E397}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E3740C9-CEEF-452B-A538-30D7D129E397}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E3740C9-CEEF-452B-A538-30D7D129E397}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E3740C9-CEEF-452B-A538-30D7D129E397}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D4B6489-F92A-48C1-83B6-3BFA69DDEFBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D4B6489-F92A-48C1-83B6-3BFA69DDEFBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D4B6489-F92A-48C1-83B6-3BFA69DDEFBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D4B6489-F92A-48C1-83B6-3BFA69DDEFBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5F40EFB-CDB4-4010-83E0-8EDD1A70DD06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5F40EFB-CDB4-4010-83E0-8EDD1A70DD06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5F40EFB-CDB4-4010-83E0-8EDD1A70DD06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5F40EFB-CDB4-4010-83E0-8EDD1A70DD06}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {24856AD1-31F3-42E5-8702-2EEC28EDFB13}
 	EndGlobalSection
 EndGlobal

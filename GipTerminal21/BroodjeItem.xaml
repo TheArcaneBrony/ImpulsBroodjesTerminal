@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="GipTerminal21.BroodjeItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GipTerminal21"
+             mc:Ignorable="d" 
+             d:DesignHeight="105" d:DesignWidth="500">
+    <Grid Width="500" Height="105">
+        <Border BorderThickness="1" Height="105" VerticalAlignment="Top" CornerRadius="16" Background="#2c2c2c" d:LayoutOverrides="HorizontalAlignment">
+            <Grid Margin="9" d:LayoutOverrides="Height">
+                <Border BorderBrush="Black" BorderThickness="1" CornerRadius="42.5" HorizontalAlignment="Left" Width="85" d:LayoutOverrides="HorizontalAlignment">
+                    <Ellipse>
+                        <Ellipse.Fill>
+                            <ImageBrush ImageSource="{Binding BitmapSource}" ></ImageBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                </Border>
+                <Label HorizontalAlignment="Left" Margin="90,10,0,0" FontSize="14" Foreground="#FFF" VerticalAlignment="Top" Height="48" Content="{Binding BroodjePrijs}"/>
+                <Label HorizontalAlignment="Left" Margin="90,40,0,0" FontSize="20" Foreground="#FFF" Content="{Binding BroodjeName}"/>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net5.0-windows</TargetFramework>
+        <UseWpf>true</UseWpf>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <PackageReference Include="BCrypt.Net-Next" Version="4.0.2" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.3" />
+        <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="5.0.0-alpha.2" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <ProjectReference Include="..\UserGenerator\UserGenerator.csproj" />
+    </ItemGroup>
+    
+    <Import Project="..\aShared\aShared.projitems" Label="Shared" />
+</Project>
+
