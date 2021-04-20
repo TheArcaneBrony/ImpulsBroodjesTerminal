@@ -98,6 +98,25 @@ namespace GipTerminalInstaller
             }
             _downloadRunning = false;
         }
+        public static void UrlShortcut(string path, string target)
+        {
+            using (StreamWriter writer = new StreamWriter(path + ".url"))
+            {
+                writer.WriteLine("[InternetShortcut]");
+                writer.WriteLine("URL=" + target);
+            }
+        }
+        public static void FileShortcut(string path, string target)
+        {
+            using (StreamWriter writer = new StreamWriter(path + ".url"))
+            {
+                writer.WriteLine("[InternetShortcut]");
+                writer.WriteLine("URL=file:///" + target);
+                writer.WriteLine("IconIndex=0");
+                string icon = target.Replace('\\', '/');
+                writer.WriteLine("IconFile=" + icon);
+            }
+        }
         //CheckAdmin adapted from https://social.msdn.microsoft.com/Forums/windows/en-US/db6647a3-85ca-4dc4-b661-fbbd36bd561f/run-as-administrator-c?forum=winforms
 #if admin
         public static void CheckAdmin(string[] args)

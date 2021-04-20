@@ -137,9 +137,9 @@ namespace GipTerminalInstaller.Installers
                 //Console.ReadLine();  
             }  
             catch (Exception ex)  
-            {  
-                Util.Log(ex.Message,true);  
-                Console.ReadLine();
+            {
+                Util.Log(ex.Message,true);
+                //Console.ReadLine();
             }  
   
         }  

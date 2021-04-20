@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Reflection;
 
@@ -19,7 +20,8 @@ namespace GipTerminalInstaller
                 Util.Log("Installation step 1: create Terminal account", true);
                 Installers.WindowsExplorer.SetupAccounts();
                 Util.GetProcessOutput(@"cmd /c mkdir C:\Users\Terminal\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\");
-                File.Copy(EA.Location, @"C:\Users\Terminal\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\"+new FileInfo(EA.Location).Name);
+                Util.FileShortcut(@"C:\Users\Terminal\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\installer.lnk", Directory.GetFiles(new FileInfo(EA.Location).DirectoryName).First(x=>x.EndsWith(".exe")));
+                //File.Copy(EA.Location, @"C:\Users\Terminal\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\"+new FileInfo(EA.Location).Name);
 
             }
             else
