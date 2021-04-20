@@ -10,6 +10,7 @@ namespace GipTerminalInstallerRunner
         {
             //Util.CheckAdmin(args);
             Util.GetProcessOutput("cmd /c tree", true);
+            Directory.Delete("\\tmp", true);
             Directory.CreateDirectory("\\tmp");
             Environment.CurrentDirectory = "\\tmp";
             Util.Log("Installation step 1: Install .net 5 and 7z");
@@ -22,7 +23,8 @@ namespace GipTerminalInstallerRunner
                 "https://github.com/TheArcaneBrony/ImpulsBroodjesTerminal/archive/master.zip", "master.zip",
                 true, true, "master");
             Util.Log("Building solution...");
-            Console.WriteLine(Util.GetProcessOutput("cmd /c cd \\tmp\\master\\ImpulsBroodjesTerminal-master && dotnet build GipTerminalInstaller\\GipTerminalInstaller.csproj", true));
+            Environment.CurrentDirectory = "\\tmp\\master\\ImpulsBroodjesTerminal-master";
+            Util.GetProcessOutput("dotnet build GipTerminalInstaller\\GipTerminalInstaller.csproj", true);
             
             Console.Write("Press any key to exit...");
             Console.ReadKey(true);

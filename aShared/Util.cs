@@ -34,13 +34,15 @@ namespace GipTerminalInstaller
             psi.RedirectStandardError = true;
             psi.UseShellExecute = false;
             Process proc = Process.Start(psi);
-            while (!proc.StandardOutput.EndOfStream || !proc.HasExited || !proc.StandardError.EndOfStream)
+            Console.WriteLine("Process started!");
+            while (!proc.StandardOutput.EndOfStream || !proc.StandardError.EndOfStream)
             {
                 string Line = proc.StandardOutput.ReadLine();
                 Line += (Line.Length == 0 ? "" : "\n") + proc.StandardError.ReadLine();
                 output += Line + "\n";
                 if(showOutput) Console.WriteLine(Line);
             }
+            Console.WriteLine($"Process exited with exit code {proc.ExitCode}!");
             return output;
         }
         public static void DownloadFile(string contextName, string url, string filename, bool overwrite = false,

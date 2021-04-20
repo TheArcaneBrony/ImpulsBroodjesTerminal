@@ -91,8 +91,8 @@ namespace GipTerminalInstaller.Installers
             key.SetValue("DisableCMD", 1, RegistryValueKind.DWord);
             
             //System policies (local machine)
-            key = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion").CreateSubKey("PersonalizationCSP");
-            key.SetValue("LockScreenImageUrl", "", RegistryValueKind.String);
+            // key = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion").CreateSubKey("PersonalizationCSP");
+            // key.SetValue("LockScreenImageUrl", "", RegistryValueKind.String);
             
         }
 
