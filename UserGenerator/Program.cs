@@ -11,6 +11,9 @@ namespace UserGenerator
         static void Main(string[] args)
         {
             Console.WriteLine(ScrambleString("Hello World!", 16));
+            Console.WriteLine(ScrambleString("Hello World!", 16));
+            Console.WriteLine(ScrambleString("Hello World!", 16));
+            Console.WriteLine(ScrambleString("Hello World!", 16));
             if (File.Exists("users.txt"))
             {
                 Console.WriteLine("Reading user list...");
@@ -25,6 +28,17 @@ namespace UserGenerator
 
         static void PreInit()
         {
+            //delete all users
+            db.Users.RemoveRange(db.Users);
+            db.SaveChanges();
+            //add temp user
+            db.Users.Add(new User()
+            {
+                UserEmail = "a",
+                UserFirstname = "test",
+                UserLastname = "user",
+                UserPassword = ScrambleString("a",10).hashed
+            });
             Users = File.ReadAllLines("users.txt");
             if(File.Exists("out.txt")) File.Delete("out.txt");
             outputFile = new StreamWriter("out.txt");

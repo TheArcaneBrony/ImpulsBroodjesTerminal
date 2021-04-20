@@ -124,8 +124,8 @@ namespace UserManager
                 {
                     UserFirstname = fields[0], UserLastname = fields[1], UserEmail = fields[2],
                     UserPassword = BCrypt.Net.BCrypt.HashPassword(fields[3], 10),
-                    UserEnabled = fields[4] == "1" ? 1 : 0, UserIsAdmin = fields[5] == "1" ? 1 : 0,
-                    UserCanViewOrders = fields[6] == "1" ? 1 : 0
+                    UserEnabled = (sbyte?) (fields[4] == "1" ? 1 : 0), UserIsAdmin = (sbyte?) (fields[5] == "1" ? 1 : 0),
+                    UserCanViewOrders = (sbyte?) (fields[6] == "1" ? 1 : 0)
                 };
                 db.Users.Add(user);
             }

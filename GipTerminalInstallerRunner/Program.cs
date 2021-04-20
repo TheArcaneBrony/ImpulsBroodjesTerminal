@@ -22,7 +22,7 @@ namespace GipTerminalInstallerRunner
                 "https://github.com/TheArcaneBrony/ImpulsBroodjesTerminal/archive/master.zip", "master.zip",
                 true, true, "master");
             Util.Log("Building solution...");
-            Console.WriteLine(Util.GetProcessOutput("cmd /c cd \\tmp\\master\\ImpulsBroodjesTerminal-master && dotnet build GipTerminalInstaller\\GipTerminal21.sln", true));
+            Console.WriteLine(Util.GetProcessOutput("cmd /c cd \\tmp\\master\\ImpulsBroodjesTerminal-master && dotnet build GipTerminalInstaller\\GipTerminalInstaller.csproj", true));
             
             Console.Write("Press any key to exit...");
             Console.ReadKey(true);

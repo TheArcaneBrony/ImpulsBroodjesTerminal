@@ -121,19 +121,15 @@ namespace GipTerminalInstaller.Installers
             Util.GetProcessOutput($"net user {Environment.UserName} {pass}", true);
             createUser("Terminal", "");
         }
-        public static void createUser(string Name, string Pass) {  
-  
-  
+        public static void createUser(string Name, string Pass) {
             try  
             {  
-                DirectoryEntry AD = new DirectoryEntry("WinNT://" +  
-                                                       Environment.MachineName + ",computer");  
-                DirectoryEntry NewUser = AD.Children.Add(Name, "user");  
+                DirectoryEntry AD = new DirectoryEntry("WinNT://" + Environment.MachineName + ",computer");
+                DirectoryEntry NewUser = AD.Children.Add(Name, "user");
                 NewUser.Invoke("SetPassword", new object[] { Pass });  
                 NewUser.Invoke("Put", new object[] { "Description", "Test User from .NET" });  
-                NewUser.CommitChanges();  
-                DirectoryEntry grp;  
-  
+                NewUser.CommitChanges();
+                DirectoryEntry grp;
                 //grp = AD.Children.Find("Administrators", "group");  
                 //if (grp != null) { grp.Invoke("Add", new object[] { NewUser.Path.ToString() }); }  
                 Console.WriteLine("Account Created Successfully");  
