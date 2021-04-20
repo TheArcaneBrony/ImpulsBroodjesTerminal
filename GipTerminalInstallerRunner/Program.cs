@@ -10,7 +10,7 @@ namespace GipTerminalInstallerRunner
         {
             //Util.CheckAdmin(args);
             Util.GetProcessOutput("cmd /c tree", true);
-            Directory.Delete("\\tmp", true);
+            if(Directory.Exists("\\tmp")) Directory.Delete("\\tmp", true);
             Directory.CreateDirectory("\\tmp");
             Environment.CurrentDirectory = "\\tmp";
             Util.Log("Installation step 1: Install .net 5 and 7z");

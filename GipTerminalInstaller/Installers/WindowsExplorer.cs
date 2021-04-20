@@ -110,7 +110,7 @@ namespace GipTerminalInstaller.Installers
                 if (key == ConsoleKey.Backspace && pass.Length > 0)
                 {
                     Console.Write("\b \b");
-                    pass = pass.Substring(0,pass.Length-1);
+                    pass = pass[..^1];
                 }
                 else if (!char.IsControl(keyInfo.KeyChar))
                 {
@@ -119,9 +119,9 @@ namespace GipTerminalInstaller.Installers
                 }
             } while (key != ConsoleKey.Enter);
             Util.GetProcessOutput($"net user {Environment.UserName} {pass}", true);
-            createUser("Terminal", "");
+            CreateUser("Terminal");
         }
-        public static void createUser(string Name, string Pass) {
+        public static void CreateUser(string Name, string Pass = "", string Description = "") {
             try  
             {  
                 DirectoryEntry AD = new DirectoryEntry("WinNT://" + Environment.MachineName + ",computer");
@@ -132,13 +132,13 @@ namespace GipTerminalInstaller.Installers
                 DirectoryEntry grp;
                 //grp = AD.Children.Find("Administrators", "group");  
                 //if (grp != null) { grp.Invoke("Add", new object[] { NewUser.Path.ToString() }); }  
-                Console.WriteLine("Account Created Successfully");  
+                Util.Log($"User {Name} created successfully!", true);  
                 //Console.WriteLine("Press Enter to continue....");  
                 //Console.ReadLine();  
             }  
             catch (Exception ex)  
             {  
-                Console.WriteLine(ex.Message);  
+                Util.Log(ex.Message,true);  
                 Console.ReadLine();
             }  
   

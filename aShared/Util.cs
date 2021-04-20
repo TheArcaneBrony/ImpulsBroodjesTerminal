@@ -27,20 +27,38 @@ namespace GipTerminalInstaller
         {
             string output = "";
             string[] cli = commandline.Split(' ');
-            Log(cli[0], true);
-            Log(cli.Length > 1 ? string.Join(" ", cli.Skip(1)) : "", true);
+            // Log(cli[0], true);
+            // Log(cli.Length > 1 ? string.Join(" ", cli.Skip(1)) : "", true);
             ProcessStartInfo psi = new ProcessStartInfo(cli[0], cli.Length > 1 ? string.Join(" ", cli.Skip(1)) : "");
             psi.RedirectStandardOutput = true;
             psi.RedirectStandardError = true;
             psi.UseShellExecute = false;
             Process proc = Process.Start(psi);
             Console.WriteLine("Process started!");
+            // while (!proc.StandardOutput.EndOfStream || !proc.StandardError.EndOfStream)
+            // {
+            //     string Line = "";
+            //     if(!proc.StandardOutput.EndOfStream) proc.StandardOutput.ReadLine();
+            //     if(!proc.StandardError.EndOfStream) Line += (Line.Length == 0 ? "" : "\n") + proc.StandardError.ReadLine();
+            //     output += Line + "\n";
+            //     if(showOutput) Console.WriteLine(Line);
+            // }
+            // while (!proc.StandardOutput.EndOfStream)
+            // {
+            //     string Line = "";
+            //     if(!proc.StandardOutput.EndOfStream) Line = proc.StandardOutput.ReadLine();
+            //     output += Line + "\n";
+            //     if(showOutput) Console.WriteLine(Line);
+            // }
             while (!proc.StandardOutput.EndOfStream || !proc.StandardError.EndOfStream)
             {
-                string Line = proc.StandardOutput.ReadLine();
-                Line += (Line.Length == 0 ? "" : "\n") + proc.StandardError.ReadLine();
+                string Line = "";
+                Line = proc.StandardOutput.ReadLine();
                 output += Line + "\n";
                 if(showOutput) Console.WriteLine(Line);
+                // Line = (Line.Length == 0 ? "" : "\n") + proc.StandardError.ReadLine();
+                // output += Line + "\n";
+                // if(showOutput) Console.WriteLine(Line);
             }
             Console.WriteLine($"Process exited with exit code {proc.ExitCode}!");
             return output;
