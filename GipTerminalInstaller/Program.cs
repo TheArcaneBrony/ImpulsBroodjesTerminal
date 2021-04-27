@@ -30,8 +30,6 @@ namespace GipTerminalInstaller
                 Util.Log("Configuring windows...");
                 Installers.WindowsExplorer.Clean();
             }
-            
-            
             Console.Write("\nInstallation finished, press any key to exit...");
             Console.ReadKey(true);
         }

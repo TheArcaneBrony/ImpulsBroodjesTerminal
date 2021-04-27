@@ -5,7 +5,7 @@ using GipTerminalInstaller;
 
 namespace GipTerminalInstallerRunner
 {
-    public class DotNet
+    public static class DotNet
     {
         public static bool CheckIfInstalled()
         {

@@ -25,7 +25,6 @@ namespace GipTerminalInstallerRunner
             Util.Log("Building solution...");
             Environment.CurrentDirectory = "\\tmp\\master\\ImpulsBroodjesTerminal-master";
             Util.GetProcessOutput("dotnet build GipTerminalInstaller\\GipTerminalInstaller.csproj", true);
-            
             Console.Write("Press any key to exit...");
             Console.ReadKey(true);
         }
