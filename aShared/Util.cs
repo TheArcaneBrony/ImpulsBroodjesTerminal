@@ -27,8 +27,7 @@ namespace GipTerminalInstaller
         {
             string output = "";
             string[] cli = commandline.Split(' ');
-            // Log(cli[0], true);
-            // Log(cli.Length > 1 ? string.Join(" ", cli.Skip(1)) : "", true);
+            Log("Running: " + string.Join(" ", cli), true);
             ProcessStartInfo psi = new ProcessStartInfo(cli[0], cli.Length > 1 ? string.Join(" ", cli.Skip(1)) : "");
             psi.RedirectStandardOutput = true;
             psi.RedirectStandardError = true;

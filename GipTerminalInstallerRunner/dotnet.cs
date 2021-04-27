@@ -10,6 +10,7 @@ namespace GipTerminalInstallerRunner
         public static bool CheckIfInstalled()
         {
             Console.WriteLine("Checking if the .net 5 SDK is installed...");
+            if (Util.GetProcessOutput("dotnet --list-sdks", true).Contains("5.0.")) return true;
             return Directory.Exists(@"C:\Program Files\dotnet\sdk") && Directory.GetDirectories(@"C:\Program Files\dotnet\sdk").Any(x=>x.StartsWith("5."));
         }
 
