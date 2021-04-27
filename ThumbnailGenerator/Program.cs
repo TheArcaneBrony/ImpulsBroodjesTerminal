@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -50,8 +50,8 @@ namespace ThumbnailGenerator
             {
                 //Console.WriteLine(broodje.BroodjeImage);
                 string fn = ProcessImage(broodje.BroodjeId, broodje.BroodjeImage);
-                broodje.BroodjeImageThumbnail128 = $"http://ws.localhost/res/thumbs/{fn}128.png";
-                broodje.BroodjeImageThumbnail1024 = $"http://ws.localhost/res/thumbs/{fn}1024.png";
+                broodje.BroodjeImageThumbnail128 = $"https://broodjes.thearcanebrony.net/res/thumbs/{fn}128.png";
+                broodje.BroodjeImageThumbnail1024 = $"https://broodjes.thearcanebrony.net/res/thumbs/{fn}1024.png";
                 if(!File.Exists($"{siteBaseDir}{fn}128.png"))
                 {
                     File.Copy($"{fn}128.png", $"{siteBaseDir}{fn}128.png");
