@@ -51,14 +51,29 @@ namespace GipTerminalInstaller
             // }
             while (!proc.StandardOutput.EndOfStream || !proc.StandardError.EndOfStream)
             {
-                string Line = "";
-                Line = proc.StandardOutput.ReadLine();
-                output += Line + "\n";
-                if(showOutput) Console.WriteLine(Line);
-                // Line = (Line.Length == 0 ? "" : "\n") + proc.StandardError.ReadLine();
-                // output += Line + "\n";
-                // if(showOutput) Console.WriteLine(Line);
+                while (!proc.StandardOutput.EndOfStream)
+                {
+                    string Line = "";
+                    Line = proc.StandardOutput.ReadLine();
+                    output += Line + "\n";
+                    if (showOutput) Console.WriteLine(Line);
+                    // Line = (Line.Length == 0 ? "" : "\n") + proc.StandardError.ReadLine();
+                    // output += Line + "\n";
+                    // if(showOutput) Console.WriteLine(Line);
+                }
+
+                while (!proc.StandardError.EndOfStream)
+                {
+                    string? Line = "";
+                    Line = proc.StandardError.ReadLine();
+                    output += Line + "\n";
+                    if (showOutput) Console.WriteLine(Line);
+                    // Line = (Line.Length == 0 ? "" : "\n") + proc.StandardError.ReadLine();
+                    // output += Line + "\n";
+                    // if(showOutput) Console.WriteLine(Line);
+                }
             }
+
             Console.WriteLine($"Process exited with exit code {proc.ExitCode}!");
             return output;
         }
