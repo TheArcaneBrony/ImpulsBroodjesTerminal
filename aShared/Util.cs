@@ -97,6 +97,18 @@ namespace GipTerminalInstaller
             }
             _downloadRunning = false;
         }
+
+        public static void RecursiveMkDir(String path)
+        {
+            String[] ppart = path.Split('\\');
+            string _path = "";
+            foreach (String _ppa in ppart)
+            {
+                _path += _ppa;
+                Directory.CreateDirectory(_ppa);
+                Console.WriteLine("Created directory: " + _path);
+            }
+        }
         public static void UrlShortcut(string path, string target)
         {
             using (StreamWriter writer = new StreamWriter(path + ".url"))

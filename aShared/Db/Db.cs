@@ -24,7 +24,7 @@ namespace ThumbnailGenerator
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseMySql("server=thearcanebrony.net;database=impulsbroodjes;uid=impulsbroodjes_demo;pwd=impulsbroodjes", Microsoft.EntityFrameworkCore.ServerVersion.FromString("8.0.23-mysql"));
+                optionsBuilder.UseMySql("server=thearcanebrony.net;database=impulsbroodjes;uid=impulsbroodjes;pwd=impulsbroodjes", Microsoft.EntityFrameworkCore.ServerVersion.FromString("8.0.23-mysql"));
             }
         }
 

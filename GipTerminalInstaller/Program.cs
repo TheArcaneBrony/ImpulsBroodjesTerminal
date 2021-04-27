@@ -23,6 +23,7 @@ namespace GipTerminalInstaller
                     Installers.WindowsExplorer.SetupAccounts();
                     Util.GetProcessOutput(
                         @"cmd /c mkdir C:\Users\Terminal\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\");
+                    Util.RecursiveMkDir(@"C:\Users\Terminal\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\");
                     Util.FileShortcut(
                         @"C:\Users\Terminal\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\installer.lnk",
                         @"C:\tmp\master\ImpulsBroodjesTerminal-master\GipTerminalInstaller\bin\debug\net5.0-windows\gipterminalinstaller.exe");
