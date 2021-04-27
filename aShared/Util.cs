@@ -27,7 +27,7 @@ namespace GipTerminalInstaller
         {
             string output = "";
             string[] cli = commandline.Split(' ');
-            Log("Running: " + string.Join(" ", cli), true);
+            // Log("Running: " + string.Join(" ", cli), true);
             ProcessStartInfo psi = new ProcessStartInfo(cli[0], cli.Length > 1 ? string.Join(" ", cli.Skip(1)) : "");
             psi.RedirectStandardOutput = true;
             psi.RedirectStandardError = true;
@@ -119,7 +119,7 @@ namespace GipTerminalInstaller
             string _path = "";
             foreach (String _ppa in ppart)
             {
-                _path += _ppa;
+                _path += _ppa + Path.PathSeparator;
                 Directory.CreateDirectory(_ppa);
                 Console.WriteLine("Created directory: " + _path);
             }
